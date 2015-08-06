@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Ahorcado_Estados.Presentacion.Score"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ahorcado_Estados.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="{StaticResource TextStyleExtraLargeFontSize}"
+    Foreground="White">
+
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Imagenes/fondo.png" Opacity="0.5" />
+    </Page.Background>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+            <TextBlock x:Name="Title" Text="My Score" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" />
+
+            <TextBlock FontWeight="Bold" Margin="0 20 0 0" Text="Player" Foreground="Blue"/>
+            <TextBlock FontWeight="Bold" Margin="20 10 0 20" Text="0" x:Name="txtPlayer" Foreground="Blue"/>
+            <TextBlock FontWeight="Bold" Margin="0 20 0 0" Text="Games" Foreground="Orange"/>
+            <TextBlock FontWeight="Bold" Margin="20 10 0 20" Text="0" x:Name="txtGames" Foreground="Orange"/>
+            <TextBlock FontWeight="Bold" Margin="0 20 0 0" Text="Correct" Foreground="LightGreen"/>
+            <TextBlock FontWeight="Bold" Margin="20 10 0 20" Text="0" x:Name="txtCorrect" Foreground="LightGreen"/>
+            <TextBlock FontWeight="Bold" Margin="0 20 0 0" Text="Wrong" Foreground="Red"/>
+            <TextBlock FontWeight="Bold" Margin="20 10 0 20" Text="0" x:Name="txtWrong" Foreground="Red"/>
+            <TextBlock FontWeight="Bold" Margin="0 20 0 0" Text="Points" Foreground="Gold"/>
+            <TextBlock FontWeight="Bold" Margin="20 10 0 20" Text="0" x:Name="txtPoints" Foreground="Gold"/>
+        </StackPanel>
+    </ScrollViewer>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Discovered" Icon="List" Name="btnView" Click="btnView_Click"/>
+            <AppBarButton Label="Share" Icon="Comment" Name="btnShare" Click="btnShare_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

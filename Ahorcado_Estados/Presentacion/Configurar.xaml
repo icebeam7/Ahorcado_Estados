@@ -1,0 +1,50 @@
+﻿<Page xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input" 
+    x:Class="Ahorcado_Estados.Presentacion.Configurar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ahorcado_Estados.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="{StaticResource TextStyleMediumFontSize}"
+    Foreground="White">
+
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Imagenes/fondo.png" Opacity="0.5" />
+    </Page.Background>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+            <TextBlock x:Name="Title" Text="Settings" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" />
+
+            <TextBlock Margin="10 30 0 10" Text="Please write your nickname" />
+            <Input:SfTextBoxExt x:Name="txtName" HorizontalAlignment="Left" Background="Black" Foreground="White" Height="40" Width="300" Margin="10 0 0 30" >
+                <Input:SfTextBoxExt.Watermark>
+                    <TextBlock Text="Player 1" Foreground="LightBlue" Opacity="0.5" FontStyle="Italic"/>
+                </Input:SfTextBoxExt.Watermark>
+            </Input:SfTextBoxExt>
+
+            <TextBlock Margin="10 30 0 10" Name="txbTimeLimit" Text="Time Limit" />
+            
+            <Input:SfDomainUpDown x:Name="domTimeLimit" HorizontalAlignment="Left" Width="300" Margin="10 0 0 30" AutoReverse="True" SpinButtonsAlignment="Both" EnableSpinAnimation="True" Background="Black" Foreground="White">
+                <Input:SfDomainUpDown.ContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Minutos}"/>
+                    </DataTemplate>
+                </Input:SfDomainUpDown.ContentTemplate>
+            </Input:SfDomainUpDown>
+
+            <TextBlock Margin="10 30 0 10" Text="Receive notifications (requires a Microsoft Band)" />
+            <ToggleSwitch x:Name="tgsMSBand" OffContent="No" OnContent="Yes" HorizontalAlignment="Left" Width="300" Foreground="White" Margin="10 0 0 30"/>
+        </StackPanel>
+    </ScrollViewer>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Save" x:Name="btnSave" Label="Save" Click="btnSave_Click"/>
+                <AppBarButton Icon="Delete" x:Name="btnDelete" Label="Delete" Click="btnDelete_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

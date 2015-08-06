@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="Ahorcado_Estados.Presentacion.Juego"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ahorcado_Estados.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="{StaticResource TextStyleMediumFontSize}"
+    Foreground="White">
+
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Imagenes/fondo.png" Opacity="0.5" />
+    </Page.Background>
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="Orange" />
+            <Setter Property="Background" Value="Orange" />
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="Width" Value="55"/>
+            <Setter Property="MinWidth" Value="55"/>
+            <Setter Property="MaxWidth" Value="55"/>
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="MinHeight" Value="55"/>
+            <Setter Property="MaxHeight" Value="55"/>
+            <Setter Property="Margin" Value="10 0 0 0"/>
+        </Style>
+    </Page.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="22" Margin="10" Name="txbUserName" FontWeight="Bold" Text="player 1" VerticalAlignment="Center" />
+                <TextBlock FontSize="22" Margin="10" Name="txtResults" FontWeight="Bold" Text=" / " VerticalAlignment="Center" />
+                <TextBlock Margin="10" Name="txbTimer" Text="00:00:00" VerticalAlignment="Center" FontSize="40" />
+            </StackPanel>
+
+            <Border Background="LightBlue" Width="380" HorizontalAlignment="Left">
+                <TextBlock FontWeight="Bold" Height="Auto" Name="txbEstado" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" TextAlignment="Center" TextWrapping="Wrap" Foreground="Black" />
+            </Border>
+
+            <StackPanel Orientation="Horizontal" x:Name="ContentPanel">
+                <Grid x:Name="grdBotones">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Name="txbResult" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="23" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4"/>
+                </Grid>
+
+                <Image x:Name="imgAhorcado" Source="ms-appx:///Imagenes/ahorcado0.png" Width="150" Height="300" Margin="5" VerticalAlignment="Top"/>
+            </StackPanel>                
+        </StackPanel>
+    </ScrollViewer>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Learn more" Icon="Help" Name="btnDetail" Click="btnDetail_Click" IsEnabled="False"/>
+            <AppBarButton Label="Share" Icon="Comment" Name="btnShare" Click="btnShare_Click"/>
+            <AppBarButton Label="Other state" Icon="Refresh" Name="btnNext" Click="Next_Click" IsEnabled="False"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

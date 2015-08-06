@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5162F81-9608-4842-A1E4-C75887F5F59C}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ahorcado_Estados</RootNamespace>
+    <AssemblyName>Ahorcado_Estados</AssemblyName>
+    <DefaultLanguage>en-us</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WP81, Version=3.8.8.3">
+      <Name>SQLite for Windows Phone 8.1</Name>
+    </SDKReference>
+    <SDKReference Include="Syncfusion 8.1 Controls for WP XAML, Version=13.1.0.30">
+      <Name>Syncfusion 8.1 Controls for WP XAML</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Negocios\AppInfo.cs" />
+    <Compile Include="Negocios\BaseDatos.cs" />
+    <Compile Include="Negocios\Configuracion.cs" />
+    <Compile Include="Negocios\Estados.cs" />
+    <Compile Include="Negocios\EstadosMSBand.cs" />
+    <Compile Include="Negocios\Metodos.cs" />
+    <Compile Include="Negocios\RatePopup.cs" />
+    <Compile Include="Negocios\Share.cs" />
+    <Compile Include="Negocios\TiempoLimite.cs" />
+    <Compile Include="Presentacion\Acerca.xaml.cs">
+      <DependentUpon>Acerca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Configurar.xaml.cs">
+      <DependentUpon>Configurar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\DetalleEstado.xaml.cs">
+      <DependentUpon>DetalleEstado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Instrucciones.xaml.cs">
+      <DependentUpon>Instrucciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Juego.xaml.cs">
+      <DependentUpon>Juego.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Score.xaml.cs">
+      <DependentUpon>Score.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\StartScreen.xaml.cs">
+      <DependentUpon>StartScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\VerEstados.xaml.cs">
+      <DependentUpon>VerEstados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite\SQLite.cs" />
+    <Compile Include="SQLite\SQLiteAsync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\Logo24x24.png" />
+    <Content Include="Assets\Logo300.png" />
+    <Content Include="Assets\Logo46x46.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-140.png" />
+    <Content Include="Assets\SmallLogo.scale-240.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-240.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-140.png" />
+    <Content Include="Assets\Square71x71Logo.scale-240.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-240.png" />
+    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-240.png" />
+    <Content Include="Datos\estados.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Imagenes\acerca.png" />
+    <Content Include="Imagenes\ahorcado0.png" />
+    <Content Include="Imagenes\ahorcado1.png" />
+    <Content Include="Imagenes\ahorcado2.png" />
+    <Content Include="Imagenes\ahorcado3.png" />
+    <Content Include="Imagenes\ahorcado4.png" />
+    <Content Include="Imagenes\ahorcado5.png" />
+    <Content Include="Imagenes\ahorcado6.png" />
+    <Content Include="Imagenes\ahorcado7.png" />
+    <Content Include="Imagenes\ApplicationIcon.png" />
+    <Content Include="Imagenes\Background.png" />
+    <Content Include="Imagenes\base.png" />
+    <Content Include="Imagenes\compartir.png" />
+    <Content Include="Imagenes\eliminar.png" />
+    <Content Include="Imagenes\Estados\001.png" />
+    <Content Include="Imagenes\Estados\002.png" />
+    <Content Include="Imagenes\Estados\003.png" />
+    <Content Include="Imagenes\Estados\004.png" />
+    <Content Include="Imagenes\Estados\005.png" />
+    <Content Include="Imagenes\Estados\006.png" />
+    <Content Include="Imagenes\Estados\007.png" />
+    <Content Include="Imagenes\Estados\008.png" />
+    <Content Include="Imagenes\Estados\009.png" />
+    <Content Include="Imagenes\Estados\010.png" />
+    <Content Include="Imagenes\Estados\011.png" />
+    <Content Include="Imagenes\Estados\012.png" />
+    <Content Include="Imagenes\Estados\013.png" />
+    <Content Include="Imagenes\Estados\014.png" />
+    <Content Include="Imagenes\Estados\015.png" />
+    <Content Include="Imagenes\Estados\016.png" />
+    <Content Include="Imagenes\Estados\017.png" />
+    <Content Include="Imagenes\Estados\018.png" />
+    <Content Include="Imagenes\Estados\019.png" />
+    <Content Include="Imagenes\Estados\020.png" />
+    <Content Include="Imagenes\Estados\021.png" />
+    <Content Include="Imagenes\Estados\022.png" />
+    <Content Include="Imagenes\Estados\023.png" />
+    <Content Include="Imagenes\Estados\024.png" />
+    <Content Include="Imagenes\Estados\025.png" />
+    <Content Include="Imagenes\Estados\026.png" />
+    <Content Include="Imagenes\Estados\027.png" />
+    <Content Include="Imagenes\Estados\028.png" />
+    <Content Include="Imagenes\Estados\029.png" />
+    <Content Include="Imagenes\Estados\030.png" />
+    <Content Include="Imagenes\Estados\031.png" />
+    <Content Include="Imagenes\Estados\032.png" />
+    <Content Include="Imagenes\Estados\mapa.png" />
+    <Content Include="Imagenes\fondo.png" />
+    <Content Include="Imagenes\guardar.png" />
+    <Content Include="Imagenes\inicio.png" />
+    <Content Include="Imagenes\instrucciones.png" />
+    <Content Include="Imagenes\large.png" />
+    <Content Include="Imagenes\logo.png" />
+    <Content Include="Imagenes\logo2.png" />
+    <Content Include="Imagenes\logo300x300.png" />
+    <Content Include="Imagenes\nuevo.png" />
+    <Content Include="Imagenes\reanudar.png" />
+    <Content Include="Imagenes\score.png" />
+    <Content Include="Imagenes\small.png" />
+    <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentacion\Acerca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Configurar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\DetalleEstado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Instrucciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Juego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Score.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\StartScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\VerEstados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Band">
+      <HintPath>..\packages\Microsoft.Band.1.3.10702\lib\wpa81\Microsoft.Band.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Band.Phone">
+      <HintPath>..\packages\Microsoft.Band.1.3.10702\lib\wpa81\Microsoft.Band.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Band.Store">
+      <HintPath>..\packages\Microsoft.Band.1.3.10702\lib\wpa81\Microsoft.Band.Store.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetPlatformIdentifier)' == '' ">
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

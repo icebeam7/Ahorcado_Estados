@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="Ahorcado_Estados.Presentacion.Instrucciones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ahorcado_Estados.Presentacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="{StaticResource TextStyleLargeFontSize}"
+    Foreground="White">
+
+    <Page.Background>
+        <ImageBrush ImageSource="ms-appx:///Imagenes/fondo.png" Opacity="0.5" />
+    </Page.Background>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10">
+            <TextBlock x:Name="Title" Text="Information" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" />
+
+            <ScrollViewer Margin="0,0,0,0">
+                <RichTextBlock TextAlignment="Justify" VerticalAlignment="Top">
+                    <Paragraph>
+                        <Span>
+                            <Run Text="The United Mexican States is a federal republic composed of 32 federal entities: 31 states and one Federal District (Mexico City).
+                                 &#10;&#10;According to the Constitution of 1917, the states of the federation are free and sovereign. Each state has its own congress and constitution, while the Federal District has only limited autonomy with a local Congress and government. 
+                                 &#10;&#10;The territory of the Federal District, commonly known and referred to as Mexico City, serves as the national capital.
+                                 &#10;&#10;Discover the name of these 32 federal entities through this Hangman game."/>
+                        </Span>
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
